@@ -10,7 +10,7 @@ namespace Empolyeewage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to EmpolyeeAttendanceUC1");
+            Console.WriteLine("Welcome to EmpolyeewageUC1");
             int IS_FULL_TIME = 1;
             int emphrs = 0;
             Random random = new Random();
