@@ -8,27 +8,29 @@ namespace Empolyeewage
 {
     internal class Program
     {
+        public const int IS_FULL_TIME = 1;
+        public const int IS_PART_TIME = 2;
+        public const int EMP_RATE_PER_HOUR = 20;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to EmployeeWagecalUC2");
-            int IS_FULL_TIME = 1;
-            int IS_PART_TIME = 2;
-            int EMP_RATE_PER_HOUR = 20;
+            Console.WriteLine("Welcome to EmployeeWagecalUC4");
+
             int emphrs = 0;
             int empwage = 0;
             Random random = new Random();
             int empCheck = random.Next(0, 3);
-            if (empCheck == IS_PART_TIME)
+            switch (empCheck)
             {
-                emphrs = 4;
-            }
-            else if (empCheck == IS_FULL_TIME)
-            {
-                emphrs = 8;
-            }
-            else
-            {
-                emphrs = 0;
+                case IS_PART_TIME:
+                    emphrs = 4;
+                    break;
+                case IS_FULL_TIME:
+                    emphrs = 8;
+                    break;
+                default:
+                    emphrs = 0;
+                    break;
             }
             empwage = emphrs * EMP_RATE_PER_HOUR;
             Console.WriteLine("Empwage :" + empwage);
