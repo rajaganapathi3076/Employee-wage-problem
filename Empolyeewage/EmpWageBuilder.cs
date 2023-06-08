@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,27 +10,23 @@ namespace Empolyeewage
     internal class EmpWageBuilder: IEmpWageCalculator
     
     {
-        private CompanyEmpWage[] companyEmpWages;
-        private int numCompanies;
+        private ArrayList companyEmpWages;
 
         public EmpWageBuilder()
         {
-            companyEmpWages = new CompanyEmpWage[5];
-            numCompanies = 0;
+            companyEmpWages = new ArrayList();
         }
 
         public void AddCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
-            companyEmpWages[numCompanies] = companyEmpWage;
-            numCompanies++;
+            companyEmpWages.Add(companyEmpWage);
         }
 
         public void ComputeEmpWage()
         {
-            for (int i = 0; i < numCompanies; i++)
+            foreach (CompanyEmpWage companyEmpWage in companyEmpWages)
             {
-                CompanyEmpWage companyEmpWage = companyEmpWages[i];
                 int empHrs = 0;
                 int totalWorkingDays = 0;
                 int totalEmpHours = 0;
@@ -63,9 +60,9 @@ namespace Empolyeewage
 
         public void DisplayEmpWage()
         {
-            for (int i = 0; i < numCompanies; i++)
+            foreach (CompanyEmpWage companyEmpWage in companyEmpWages)
             {
-                Console.WriteLine("Total wage for company " + companyEmpWages[i].Company + " is " + companyEmpWages[i].TotalEmpWage);
+                Console.WriteLine("Total wage for company " + companyEmpWage.Company + " is " + companyEmpWage.TotalEmpWage);
             }
         }
     }
