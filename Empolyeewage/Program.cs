@@ -11,7 +11,7 @@ namespace Employeewage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to EmpWage calculation UC 13");
+            Console.WriteLine("Welcome to EmpWage calculation UC 14");
             IEmpWageCalculator empWageBuilder = new EmpWageBuilder();
 
             empWageBuilder.AddCompanyEmpWage("SS PRIVATE LIMITED", 20, 20, 106);
@@ -22,6 +22,10 @@ namespace Employeewage
             empWageBuilder.ComputeEmpWage();
             empWageBuilder.DisplayEmpWage();
 
+
+            string queriedCompany = "SMT STEEL PVT";
+            int totalWage = empWageBuilder.GetTotalWageByCompany(queriedCompany);
+            Console.WriteLine("Total wage for company " + queriedCompany + " is " + totalWage);
         }
 
 

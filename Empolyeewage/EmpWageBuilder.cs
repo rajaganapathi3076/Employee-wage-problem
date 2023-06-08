@@ -72,6 +72,20 @@ namespace Empolyeewage
                 }
             }
         }
+
+        public int GetTotalWageByCompany(string company)
+        {
+            foreach (CompanyEmpWage companyEmpWage in companyEmpWages)
+            {
+                if (companyEmpWage.Company == company)
+                {
+                    return companyEmpWage.TotalEmpWage;
+                }
+            }
+            return 0; // Return 0 if company not found
+        }
     }
+        
+    
 }
 

@@ -11,8 +11,10 @@ namespace Empolyeewage
         void AddCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth);
         void ComputeEmpWage();
         void DisplayEmpWage();
+        int GetTotalWageByCompany(string company);
     }
-    internal class CompanyEmpWage
+
+    class CompanyEmpWage
     {
         public string Company { get; }
         public int EmpRatePerHour { get; }
@@ -30,5 +32,6 @@ namespace Empolyeewage
             TotalEmpWage = 0;
             DailyWages = new List<int>();
         }
+
     }
 }
