@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Empolyeewage
 {
-    internal class EmpWageBuilder
+    internal class EmpWageBuilder: IEmpWageCalculator
+    
     {
         private CompanyEmpWage[] companyEmpWages;
         private int numCompanies;

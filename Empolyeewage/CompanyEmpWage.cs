@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Empolyeewage
 {
+    interface IEmpWageCalculator
+    {
+        void AddCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth);
+        void ComputeEmpWage();
+        void DisplayEmpWage();
+    }
     internal class CompanyEmpWage
     {
         public string Company { get; }
