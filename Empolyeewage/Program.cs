@@ -11,21 +11,23 @@ namespace Employeewage
     {
         static void Main(string[] args)
         {
-            EmpWageBuilder company1 = new EmpWageBuilder("SS PRIVATE LIMITED", 20, 20, 100);
-            company1.ComputeEmpWage();
-            company1.DisplayEmpWage();
+            Console.WriteLine("Welcome to EmpWage calculation UC 10");
+            EmpWageBuilder empWageBuilder = new EmpWageBuilder();
 
-            EmpWageBuilder company2 = new EmpWageBuilder("SMT STEELS", 56, 35, 120);
-            company2.ComputeEmpWage();
-            company2.DisplayEmpWage();
+            empWageBuilder.AddCompanyEmpWage("SS PRIVATE LIMITED", 20, 20, 106);
+            empWageBuilder.AddCompanyEmpWage("TATA STEEL PVT", 30, 25, 90);
+            empWageBuilder.AddCompanyEmpWage("SMT STEEL PVT", 15, 25, 110);
+            empWageBuilder.AddCompanyEmpWage("THANGAM STEEL PVT", 35, 25, 130);
+            empWageBuilder.AddCompanyEmpWage("MSS TRANSPORT PVT", 25, 25, 140);
+            
 
-            EmpWageBuilder company3 = new EmpWageBuilder("TATA STEELS", 23, 60, 120);
-            company2.ComputeEmpWage();
-            company2.DisplayEmpWage();
-
+            empWageBuilder.ComputeEmpWage();
+            empWageBuilder.DisplayEmpWage();
         }
 
     }
+
+    
         
     
 }
