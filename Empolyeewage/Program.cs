@@ -11,7 +11,7 @@ namespace Employeewage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to EmpWage calculation UC 12");
+            Console.WriteLine("Welcome to EmpWage calculation UC 13");
             IEmpWageCalculator empWageBuilder = new EmpWageBuilder();
 
             empWageBuilder.AddCompanyEmpWage("SS PRIVATE LIMITED", 20, 20, 106);

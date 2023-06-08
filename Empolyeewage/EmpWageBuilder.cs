@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Empolyeewage
 {
-    internal class EmpWageBuilder: IEmpWageCalculator
-    
+    internal class EmpWageBuilder : IEmpWageCalculator
+
     {
-        private ArrayList companyEmpWages;
+        private List<CompanyEmpWage> companyEmpWages;
 
         public EmpWageBuilder()
         {
-            companyEmpWages = new ArrayList();
+            companyEmpWages = new List<CompanyEmpWage>();
         }
 
         public void AddCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
@@ -52,6 +52,8 @@ namespace Empolyeewage
                     }
 
                     totalEmpHours += empHrs;
+                    int dailyWage = empHrs * companyEmpWage.EmpRatePerHour;
+                    companyEmpWage.DailyWages.Add(dailyWage);
                 }
 
                 companyEmpWage.TotalEmpWage = totalEmpHours * companyEmpWage.EmpRatePerHour;
@@ -63,6 +65,11 @@ namespace Empolyeewage
             foreach (CompanyEmpWage companyEmpWage in companyEmpWages)
             {
                 Console.WriteLine("Total wage for company " + companyEmpWage.Company + " is " + companyEmpWage.TotalEmpWage);
+                Console.WriteLine("Daily wages for company " + companyEmpWage.Company + ":");
+                foreach (int dailyWage in companyEmpWage.DailyWages)
+                {
+                    Console.WriteLine(dailyWage);
+                }
             }
         }
     }

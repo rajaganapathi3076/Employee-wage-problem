@@ -19,6 +19,7 @@ namespace Empolyeewage
         public int NumOfWorkingDays { get; }
         public int MaxHoursPerMonth { get; }
         public int TotalEmpWage { get; set; }
+        public List<int> DailyWages { get; }
 
         public CompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
@@ -27,6 +28,7 @@ namespace Empolyeewage
             NumOfWorkingDays = numOfWorkingDays;
             MaxHoursPerMonth = maxHoursPerMonth;
             TotalEmpWage = 0;
+            DailyWages = new List<int>();
         }
     }
 }
